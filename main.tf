@@ -11,11 +11,12 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_virtual_network" "vnet" {
-  name                = "Batman"
-  address_space       = ["10.0.0.0/16"]
-  location            = "East US"
-  resource_group_name = "vnet_resource_group"
+module "vnet" {
+  source             = "./modules/vnet-module"
+  vnet_name          = "vnet"
+  vnet_rg_name       = "vnet_resource_group"
+  vnet_address_space = ["10.0.0.0/16"]
+  vnet_location      = "East US"
 }
 
 module "subnet1" {
