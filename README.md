@@ -10,6 +10,6 @@ practicing Terraform modules
 
 # procedure
 - 3 resource to be created:
-    - vnet with `resource` keyword
+    - vnet with `module` keyword
     - subnet1 with `module` keyword
     - subnet2 with `module` keyword
