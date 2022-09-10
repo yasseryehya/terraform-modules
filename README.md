@@ -13,3 +13,6 @@ practicing Terraform modules
     - vnet with `module` keyword
     - subnet1 with `module` keyword
     - subnet2 with `module` keyword
+
+# TODO
+- creating a pipeline that triggers with Github pushes
