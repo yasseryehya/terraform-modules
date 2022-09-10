@@ -18,16 +18,18 @@ resource "azurerm_virtual_network" "vnet" {
   resource_group_name = "vnet_resource_group"
 }
 
-resource "azurerm_subnet" "subnet" {
-  name                 = "Robin"
-  resource_group_name  = "vnet_resource_group"
-  virtual_network_name = azurerm_virtual_network.vnet.name
-  address_prefixes     = ["10.0.1.0/24"]
+module "subnet1" {
+  source                  = "./modules/subnet-module"
+  subnet_name             = "subnet1"
+  subnet_rg_name          = "vnet_resource_group"
+  subnet_vnet_name        = azurerm_virtual_network.vnet.name
+  subnet_address_prefixes = ["10.0.1.0/24"]
 }
 
-resource "azurerm_subnet" "subnet2" {
-  name                 = "Robin2"
-  resource_group_name  = "vnet_resource_group"
-  virtual_network_name = azurerm_virtual_network.vnet.name
-  address_prefixes     = ["10.0.2.0/24"]
+module "subnet2" {
+  source                  = "./modules/subnet-module"
+  subnet_name             = "subnet2"
+  subnet_rg_name          = "vnet_resource_group"
+  subnet_vnet_name        = azurerm_virtual_network.vnet.name
+  subnet_address_prefixes = ["10.0.2.0/24"]
 }
