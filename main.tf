@@ -17,7 +17,7 @@ resource "azurerm_virtual_network" "vnet" {
   location            = "East US"
   resource_group_name = "vnet_resource_group"
 
-resource "azurerm_subnet" "subnet" {
+resource "azurerm_subnet" "subnet1" {
   name                 = "subnet1"
   resource_group_name  = "vnet_resource_group"
   virtual_network_name = azurerm_virtual_network.vnet.name
@@ -30,4 +30,3 @@ resource "azurerm_subnet" "subnet2" {
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = ["10.0.2.0/24"]
 }
-
