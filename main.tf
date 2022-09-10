@@ -22,7 +22,7 @@ module "subnet1" {
   source                  = "./modules/subnet-module"
   subnet_name             = "subnet1"
   subnet_rg_name          = "vnet_resource_group"
-  subnet_vnet_name        = azurerm_virtual_network.vnet.name
+  subnet_vnet_name        = module.vnet.vnet_name
   subnet_address_prefixes = ["10.0.1.0/24"]
 }
 
@@ -30,6 +30,6 @@ module "subnet2" {
   source                  = "./modules/subnet-module"
   subnet_name             = "subnet2"
   subnet_rg_name          = "vnet_resource_group"
-  subnet_vnet_name        = azurerm_virtual_network.vnet.name
+  subnet_vnet_name        = module.vnet.vnet_name
   subnet_address_prefixes = ["10.0.2.0/24"]
 }
