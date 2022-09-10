@@ -8,3 +8,8 @@ practicing Terraform modules
 | Modules tutorial  | [Youtube video](https://www.youtube.com/watch?v=7jnuTdhxjhw)|
 | Terraform modules documentation  | [Terraform docs](https://www.terraform.io/language/modules)|
 
+# procedure
+- 3 resource to be created:
+    - vnet with `resource` keyword
+    - subnet1 with `module` keyword
+    - subnet2 with `module` keyword
